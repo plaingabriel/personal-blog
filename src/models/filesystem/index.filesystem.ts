@@ -1,3 +1,6 @@
+import { existsSync, mkdirSync } from "fs";
+import * as fs from "fs/promises";
+import path from "path";
 import {
   ArticleService,
   IArticle,
@@ -9,7 +12,14 @@ class ArticleModel implements ArticleService {
   private fileFolder: string;
 
   constructor(fileFolder: string) {
-    this.fileFolder = fileFolder;
+    this.fileFolder = path.join(__dirname, fileFolder);
+    this.ensureFolderExists();
+  }
+
+  private ensureFolderExists() {
+    if (!existsSync(this.fileFolder)) {
+      mkdirSync(this.fileFolder);
+    }
   }
 
   async getArticles() {
