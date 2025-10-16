@@ -6,13 +6,17 @@ import {
   IArticle,
   ModelService,
   NewArticle,
-} from "types/definitions";
+} from "types/definitions.js";
+import { fileURLToPath } from "url";
 
 class ArticleModel implements ArticleService {
   private fileFolder: string;
 
   constructor(fileFolder: string) {
-    this.fileFolder = path.join(__dirname, fileFolder);
+    this.fileFolder = path.join(
+      path.dirname(fileURLToPath(import.meta.url)),
+      fileFolder
+    );
     this.ensureFolderExists();
   }
 
