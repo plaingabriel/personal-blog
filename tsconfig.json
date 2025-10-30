@@ -9,6 +9,7 @@
     "paths": {
       "@/*": ["src/*"],
       "@models/*": ["src/models/*"],
+      "@lib/*": ["src/lib/*"],
       "@definitions": ["src/types/definitions.ts"]
     }
   },
