@@ -1,5 +1,5 @@
-import { createApp } from "app.js";
-import { ModelServiceFileSystem } from "models/filesystem/index.filesystem.js";
+import { createApp } from "@/app";
+import { ModelServiceFileSystem } from "@models/filesystem/index.filesystem";
 
 const app = createApp(new ModelServiceFileSystem(".db"));
 

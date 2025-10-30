@@ -3,11 +3,13 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "baseUrl": "./src",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@types/*": ["./src/types/*"],
-      "@models/*": ["./src/models/*"]
+      "@/*": ["src/*"],
+      "@models/*": ["src/models/*"],
+      "@definitions": ["src/types/definitions.ts"]
     }
   },
   "include": ["src/**/*"],

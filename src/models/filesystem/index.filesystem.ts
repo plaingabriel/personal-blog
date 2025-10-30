@@ -1,12 +1,12 @@
-import { existsSync, mkdirSync } from "fs";
-import * as fs from "fs/promises";
-import path from "path";
 import {
   ArticleService,
   IArticle,
   ModelService,
   NewArticle,
-} from "types/definitions.js";
+} from "@definitions";
+import { existsSync, mkdirSync } from "fs";
+import * as fs from "fs/promises";
+import path from "path";
 import { fileURLToPath } from "url";
 
 class ArticleModel implements ArticleService {
